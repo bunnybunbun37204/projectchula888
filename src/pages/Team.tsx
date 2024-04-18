@@ -2,29 +2,27 @@ const people = [
   {
     name: "Bunyawat Naunnak",
     role: "Project Manager",
-    imageUrl:"/images/game.jpg"
+    imageUrl: "/images/game.jpg",
   },
   {
     name: "Pongsakorn Phimphongpisarn",
     role: "Database Manager",
-    imageUrl:"/images/pond.jpg"
+    imageUrl: "/images/pond.jpg",
   },
   {
     name: "Thanapat Donlachanon",
     role: "Front-end developer",
-    imageUrl:"/images/pakky.jpg"
-
+    imageUrl: "/images/pakky.jpg",
   },
   {
     name: "Mintada Puangmintada",
     role: "Front-end developer",
-    imageUrl:"/images/mui.jpg"
+    imageUrl: "/images/mui.jpg",
   },
   {
     name: "Natawat Chaniat",
     role: "Back-end developer",
-    imageUrl:"/images/wai.jpg"
-
+    imageUrl: "/images/wai.jpg",
   },
   // More people...
 ];
@@ -34,11 +32,15 @@ export default function Team() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
         <div className="max-w-2xl">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Meet our Team
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl font-noto-sans gap-1">
+            Meet Our 
+            <div className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text font-bold">
+            &nbsp;คอมชาย
+            </div>
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600 font-noto-sans">
-            This project is Database system class project that was made by คอมชาย
+            This project is Database system class project that was made by
+            คอมชาย Chula
           </p>
         </div>
         <ul
