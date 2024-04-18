@@ -86,7 +86,7 @@ export default function Blog() {
           {posts.map((post) => (
             <article
               key={post.id}
-              className="flex max-w-xl flex-col items-start justify-between"
+              className="flex max-w-xl flex-col items-start justify-between  transition-transform transform hover:scale-105 shadow-sm"
             >
               <div className="flex items-center gap-x-4 text-xs">
                 <time dateTime={post.datetime} className="text-gray-500">
