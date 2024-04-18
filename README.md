@@ -49,4 +49,9 @@ bun install .
 bun run dev
 ```
 
+## Resource
+- UI Library : [headlessui](https://headlessui.com/)
+- Styling : [tailwindcss](https://tailwindcss.com/)
+- Icon : [heroicon](https://heroicons.com/)
+
 ## Enjoy Kub Pom
