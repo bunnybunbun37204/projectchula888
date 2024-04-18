@@ -1,14 +1,13 @@
-import Example from "./components/Dialog";
-import Blog from "./components/Blog";
-import About from "./components/About";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Team from "./pages/Team";
 
 const App = () => {
   return (
-    <div className="bg-gray-100 min-h-screen p-8">
-      <Example />
-      <About />
-      <Blog />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/team" element={<Team />} />
+    </Routes>
   );
 };
 
