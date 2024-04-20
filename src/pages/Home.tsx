@@ -1,5 +1,5 @@
-import Example from "../components/Dialog";
-import Blog from "../components/Blog";
+import Example from '../components/Dialog';
+import Blog from '../components/Blog';
 
 const Home = () => {
   return (

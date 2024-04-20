@@ -1,33 +1,33 @@
 const people = [
   {
-    name: "Bunyawat Naunnak",
-    role: "Project Manager",
-    imageUrl: "/images/game.jpg",
-    ig: "https://www.instagram.com/plzcallmegame/",
+    name: 'Bunyawat Naunnak',
+    role: 'Project Manager',
+    imageUrl: '/images/game.jpg',
+    ig: 'https://www.instagram.com/plzcallmegame/',
   },
   {
-    name: "Pongsakorn Phimphongpisarn",
-    role: "Database Manager",
-    imageUrl: "/images/pond.jpg",
-    ig: "https://www.instagram.com/pond.psk54/",
+    name: 'Pongsakorn Phimphongpisarn',
+    role: 'Database Manager',
+    imageUrl: '/images/pond.jpg',
+    ig: 'https://www.instagram.com/pond.psk54/',
   },
   {
-    name: "Thanapat Donlachanon",
-    role: "Front-end developer",
-    imageUrl: "/images/pakky.jpg",
-    ig: "https://www.instagram.com/pakk_kky/",
+    name: 'Thanapat Donlachanon',
+    role: 'Front-end developer',
+    imageUrl: '/images/pakky.jpg',
+    ig: 'https://www.instagram.com/pakk_kky/',
   },
   {
-    name: "Mintada Puangmintada",
-    role: "Front-end developer",
-    imageUrl: "/images/mui.jpg",
-    ig: "https://www.instagram.com/min.taadaa/",
+    name: 'Mintada Puangmintada',
+    role: 'Front-end developer',
+    imageUrl: '/images/mui.jpg',
+    ig: 'https://www.instagram.com/min.taadaa/',
   },
   {
-    name: "Natawat Chaniat",
-    role: "Back-end developer",
-    imageUrl: "/images/wai.jpg",
-    ig: "https://www.instagram.com/wxi19th/",
+    name: 'Natawat Chaniat',
+    role: 'Back-end developer',
+    imageUrl: '/images/wai.jpg',
+    ig: 'https://www.instagram.com/wxi19th/',
   },
   // More people...
 ];
@@ -48,27 +48,16 @@ export default function Team() {
             <strong>&nbsp;คอมชาย</strong> Chula
           </p>
         </div>
-        <ul
-          role="list"
-          className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2 ml-14"
-        >
+        <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2 ml-14">
           {people.map((person) => (
             <li key={person.name} className="hover:cursor-pointer">
               <a href={person.ig}>
                 <div className="bg-white shadow-md rounded-md p-6 transition-transform transform hover:scale-105 hover:cursor-pointer">
                   <div className="flex items-center gap-x-6">
-                    <img
-                      className="h-16 w-16 rounded-full"
-                      src={person.imageUrl}
-                      alt=""
-                    />
+                    <img className="h-16 w-16 rounded-full" src={person.imageUrl} alt="" />
                     <div>
-                      <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">
-                        {person.name}
-                      </h3>
-                      <p className="text-sm font-semibold leading-6 text-indigo-600">
-                        {person.role}
-                      </p>
+                      <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name}</h3>
+                      <p className="text-sm font-semibold leading-6 text-indigo-600">{person.role}</p>
                     </div>
                   </div>
                 </div>

@@ -1,6 +1,6 @@
-import { Fragment, useRef, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
+import { Fragment, useRef, useState } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import { ExclamationCircleIcon } from '@heroicons/react/24/outline';
 
 export default function Example() {
   const [open, setOpen] = useState(true);
@@ -9,12 +9,7 @@ export default function Example() {
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog
-        as="div"
-        className="relative z-10"
-        initialFocus={cancelButtonRef}
-        onClose={setOpen}
-      >
+      <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -42,40 +37,25 @@ export default function Example() {
                 <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                   <div className="sm:flex sm:items-start">
                     <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                      <ExclamationCircleIcon
-                        className="h-6 w-6 text-yellow-300"
-                        aria-hidden="true"
-                      />
+                      <ExclamationCircleIcon className="h-6 w-6 text-yellow-300" aria-hidden="true" />
                     </div>
                     <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                      <Dialog.Title
-                        as="h3"
-                        className="text-base font-semibold leading-6 text-gray-900"
-                      >
+                      <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
                         Accept our policy
                       </Dialog.Title>
                       <div className="mt-2">
                         <p className="text-sm text-gray-500 font-noto-sans">
-                          Lorem ipsum dolor sit, amet consectetur adipisicing
-                          elit. Quia iure suscipit deleniti odio optio cumque
-                          temporibus quas recusandae corrupti harum. Voluptas
-                          fugit dignissimos pariatur odio nesciunt fugiat rerum
-                          iusto at! ผักกี้ หวาย ปอน มุ้ย เกม Lorem ipsum dolor
-                          sit amet consectetur adipisicing elit. Perspiciatis
-                          necessitatibus minus magni voluptates quaerat,
-                          aspernatur placeat nemo commodi impedit consectetur
-                          assumenda at quidem accusantium. Sit fugiat repellat
-                          commodi quaerat est. Lorem ipsum dolor sit, amet
-                          consectetur adipisicing elit. Praesentium dicta at
-                          maiores, laborum tempore aliquam est exercitationem
-                          non asperiores, excepturi eveniet accusantium,
-                          voluptate minima totam quasi amet quam possimus ipsa!
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Suscipit ratione unde et impedit, nobis iusto
-                          iste in nostrum dolorem quaerat excepturi culpa atque
-                          sed eveniet, cupiditate commodi itaque totam
-                          molestiae! ผักกี้ หวาย ปอน มุ้ย เกม ผักกี้ หวาย ปอน
-                          มุ้ย เกม
+                          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia iure suscipit deleniti odio
+                          optio cumque temporibus quas recusandae corrupti harum. Voluptas fugit dignissimos pariatur
+                          odio nesciunt fugiat rerum iusto at! ผักกี้ หวาย ปอน มุ้ย เกม Lorem ipsum dolor sit amet
+                          consectetur adipisicing elit. Perspiciatis necessitatibus minus magni voluptates quaerat,
+                          aspernatur placeat nemo commodi impedit consectetur assumenda at quidem accusantium. Sit
+                          fugiat repellat commodi quaerat est. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                          Praesentium dicta at maiores, laborum tempore aliquam est exercitationem non asperiores,
+                          excepturi eveniet accusantium, voluptate minima totam quasi amet quam possimus ipsa! Lorem
+                          ipsum dolor sit amet consectetur adipisicing elit. Suscipit ratione unde et impedit, nobis
+                          iusto iste in nostrum dolorem quaerat excepturi culpa atque sed eveniet, cupiditate commodi
+                          itaque totam molestiae! ผักกี้ หวาย ปอน มุ้ย เกม ผักกี้ หวาย ปอน มุ้ย เกม
                         </p>
                       </div>
                     </div>

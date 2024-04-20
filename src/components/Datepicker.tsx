@@ -1,8 +1,5 @@
-import { useState } from "react";
-import Datepicker, {
-  type DateType,
-  type DateValueType,
-} from "react-tailwindcss-datepicker";
+import { useState } from 'react';
+import Datepicker, { type DateType, type DateValueType } from 'react-tailwindcss-datepicker';
 
 interface DateValue {
   startDate: DateType;
@@ -16,7 +13,7 @@ const Datepicking = () => {
   });
 
   const handleValueChange = (newValue: DateValueType) => {
-    console.log("newValue:", newValue);
+    console.log('newValue:', newValue);
     if (newValue != undefined) {
       setValue({
         startDate: newValue.startDate,

@@ -22,34 +22,43 @@ export default {
     project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-- 
+-
+
 ## How to start
 
 - Clone this project to your development directory
-```bash 
+
+```bash
 git clone https://github.com/bunnybunbun37204/projectchula888.git
 ```
+
 - install nodejs latest lts version and install bun as a following guide [click](https://bun.sh/docs/installation)
 - cd to your project directory by using this command
- ```bash 
- cd projectchula888
+
+```bash
+cd projectchula888
 ```
+
 - then use **bun** to install package/library
- ```bash 
+
+```bash
 bun install .
 ```
+
 - wait a minute and then start project by
- ```bash 
+
+```bash
 bun run dev
 ```
 
 ## Resource
+
 - UI Library : [headlessui](https://headlessui.com/)
 - Styling : [tailwindcss](https://tailwindcss.com/)
 - Icon : [heroicon](https://heroicons.com/)
