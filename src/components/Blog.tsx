@@ -342,7 +342,6 @@ const projects = [
     ],
   },
 ];
-const format = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 export default function Blog() {
   return (
     <div className="py-24 sm:py-32 ">
@@ -360,7 +359,7 @@ export default function Blog() {
             >
               <div className="flex w-full text-xs justify-between items-center">
                 <time dateTime={projects.startDate} className="text-gray-500 font-noto-sans">
-                  {new Date(projects.startDate).toLocaleString('th-TH', format)}
+                  {new Date(projects.startDate).toLocaleString('th-TH', {weekday:'long', year:'numeric',month:'long',day:'numeric'})}
                 </time>
 
                 <a className="relative z-10 rounded-full bg-status-active px-3 py-1.5 font-medium text-gray-900">
