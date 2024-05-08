@@ -13,19 +13,19 @@ const people = [
   },
   {
     name: 'Thanapat Donlachanon',
-    role: 'Front-end developer',
+    role: 'Front-end Developer',
     imageUrl: '/images/pakky.jpg',
     ig: 'https://www.instagram.com/pakk_kky/',
   },
   {
     name: 'Mintada Puangmintada',
-    role: 'Front-end developer',
+    role: 'Front-end Developer',
     imageUrl: '/images/mui.jpg',
     ig: 'https://www.instagram.com/min.taadaa/',
   },
   {
     name: 'Natawat Chaniat',
-    role: 'Back-end developer',
+    role: 'Back-end Developer',
     imageUrl: '/images/wai.jpg',
     ig: 'https://www.instagram.com/wxi19th/',
   },
@@ -34,8 +34,8 @@ const people = [
 
 export default function Team() {
   return (
-    <div className="bg-white py-24 sm:py-32">
-      <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+    <div className="flex min-h-screen py-24 sm:py-32">
+      <div className="m-auto grid max-w-7xl px-6 lg:px-8 xl:grid-cols-3">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl font-noto-sans gap-1">
             Meet our

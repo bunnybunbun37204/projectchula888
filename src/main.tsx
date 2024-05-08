@@ -6,7 +6,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
+  <div className= "bg-gradient-to-b from-white via-third-gradient to-last-gradient ">
     <Navbar />
     <App />
+    </div>
   </BrowserRouter>,
 );
