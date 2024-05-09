@@ -50,12 +50,12 @@ export default function Navbar() {
               {/* logo */}
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <Link to="/Home">
+                  <Link to="/">
                     <img className="h-8 w-auto" src="/icons/cHips.svg" alt="Chula 888" />
                   </Link>
                 </div>
                 <div className="flex flex-shrink-0 items-center">
-                  <Link to="/Home">
+                  <Link to="/">
                     <DisclosureButton className="text-gray-900 pl-2 text-2xl font-semibold">Chula888</DisclosureButton>
                   </Link>
                 </div>
@@ -154,7 +154,7 @@ export default function Navbar() {
                       ))}
                       <MenuItem>
                         <Link
-                          to="/Home"
+                          to="/"
                           onClick={() => setLogin(false)}
                           className="text-gray-700 hover:bg-pink-100 rounded-md px-3 py-2 text-sm flex items-center justify-center"
                         >
