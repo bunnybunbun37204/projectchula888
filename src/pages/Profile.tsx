@@ -8,7 +8,7 @@ export default function Profile() {
       <div className="sm:mt-12 mb-0 py-16 mx-auto max-w-2xl sm:max-w-7xl bg-white/50 shadow-xl">
         <div className="flex sm:flex-row flex-col sm:flex-2 justify-center sm:justify-between items-center sm:mx-40 border-b-2 border-gray-200">
           <div className="flex flex-col items-center py-4 gap-y-1">
-            <UserCircleIcon width={280} height={280} color='gray'/>
+            <UserCircleIcon width={280} height={280} color="gray" />
             <div className="flex flex-row gap-x-1 justify-center items-center">
               <p className="text-xs font-medium sm:text-sm ">Edit profile</p>
               <svg
@@ -35,12 +35,12 @@ export default function Profile() {
             </p>
           </div>
         </div>
-        <div className='flex justify-between items-center mx-40'>
-          <h1 className='text-xl font-semibold  pt-3'>Projects</h1>
-          <Link to='/New'>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-            <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
-          </svg>
+        <div className="flex justify-between items-center mx-40">
+          <h1 className="text-xl font-semibold  pt-3">Projects</h1>
+          <Link to="/New">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+              <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
+            </svg>
           </Link>
         </div>
         <div className="relative items-center justify-center mx-40 mt-10">
