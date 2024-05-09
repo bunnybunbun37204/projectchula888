@@ -31,25 +31,25 @@ export default function Blog() {
                     })}
                   </time>
 
-                  <a className="relative z-10 rounded-full bg-status-active px-3 py-1.5 font-medium text-gray-900">
+                  <a className="relative z-10 rounded-full bg-status-active px-2 sm:px-3 py-1.5 font-medium text-gray-900">
                     {projects.status}
                   </a>
                 </div>
                 <div className="group relative">
-                  <h3 className="mt-3 text-xl font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                  <h3 className="sm:mt-3 mt-2 text-lg sm:text-xl font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                     <a href="#">
                       <span className="absolute inset-0" />
                       {projects.title}
                     </a>
                   </h3>
-                  <p className="mt-5 line-clamp-4 text-sm leading-6 text-gray-600">{projects.description}</p>
+                  <p className="sm:mt-5 mt-1 line-clamp-4 text-sm leading-6 text-gray-600">{projects.description}</p>
                 </div>
                 <div className="relative mt-8 flex justify-end items-center">
                   <div className="text-md leading-6">
                     <p className="font-semibold text-gray-900">
                       <a href="#">
                         <span className="absolute inset-0" />
-                        {projects.students[0].student_id}
+                        {projects.students[0].name}
                       </a>
                     </p>
                     <p className="text-gray-600">{projects.advisors[0].name}</p>
