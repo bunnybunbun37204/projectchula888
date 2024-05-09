@@ -1,14 +1,4 @@
 import Blog from '../components/Blog';
-import FilterTop from '../components/FilterTop';
-
-const items = [
-  { id: 1, name: 'Apple', category: 'Fruit' },
-  { id: 2, name: 'Carrot', category: 'Vegetable' },
-  { id: 3, name: 'Orange', category: 'Fruit' },
-  { id: 4, name: 'Broccoli', category: 'Vegetable' },
-  { id: 5, name: 'Banana', category: 'Fruit' },
-  { id: 6, name: 'Lettuce', category: 'Vegetable' },
-];
 
 export default function Explore() {
   return (
@@ -22,7 +12,6 @@ export default function Explore() {
           <div className="border-t-2 border-gray-200 mt-10 pt-10">
             <div className="container mx-auto p-4">
               <h1 className="text-2xl font-bold mb-4">Multi-Value Filter Example</h1>
-              <FilterTop items={items} />
             </div>
             <Blog />
           </div>
