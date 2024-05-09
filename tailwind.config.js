@@ -11,9 +11,9 @@ export default {
         'noto-sans': ['Noto Sans Thai', 'sans-serif'],
       },
       colors: {
-        'status-active': '#B0FC38',
+        'status-progress': '#B0FC38',
         'status-pending': '#FFC569',
-        'status-inactive': 'D0312D',
+        'status-published': '#81D4FA',
         'second-gradient': '#F0EAF4',
         'third-gradient': '#EED9F1',
         'fourth-gradient': '#AB81F7',
