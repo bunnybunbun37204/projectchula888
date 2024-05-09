@@ -34,7 +34,7 @@ const people = [
 
 export default function Team() {
   return (
-    <div className="flex py-24 h-max-height sm:py-0">
+    <div className="flex py-24 h-max-height sm:py-0 ">
       <div className="m-auto grid max-w-7xl px-6 lg:px-8 xl:grid-cols-3 justify-items-start">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl font-noto-sans gap-1">

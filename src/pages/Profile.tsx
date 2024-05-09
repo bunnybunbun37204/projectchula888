@@ -3,7 +3,7 @@ import Blog from '../components/Blog';
 
 export default function Profile() {
   return (
-    <div className="min-h-screen min-w-max p-8">
+    <div className="min-h-screen min-w-max p-8 font-noto-sans">
       <div className="sm:mt-12 mb-0 py-16 mx-auto max-w-2xl sm:max-w-7xl bg-white/50 shadow-xl">
         <div className="flex sm:flex-row flex-col sm:flex-2 justify-center sm:justify-between items-center sm:mx-40 border-b-2 border-gray-200">
           <div className="flex flex-col items-center py-4 gap-y-1">
