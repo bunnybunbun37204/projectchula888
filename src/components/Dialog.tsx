@@ -1,7 +1,7 @@
 import { Fragment, useRef, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { ExclamationCircleIcon } from '@heroicons/react/24/outline';
-
+                                                                                                                               
 export default function Example() {
   const [open, setOpen] = useState(true);
 
@@ -21,7 +21,6 @@ export default function Example() {
         >
           <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
         </Transition.Child>
-
         <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
           <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
             <Transition.Child
@@ -56,6 +55,8 @@ export default function Example() {
                           ipsum dolor sit amet consectetur adipisicing elit. Suscipit ratione unde et impedit, nobis
                           iusto iste in nostrum dolorem quaerat excepturi culpa atque sed eveniet, cupiditate commodi
                           itaque totam molestiae! ผักกี้ หวาย ปอน มุ้ย เกม ผักกี้ หวาย ปอน มุ้ย เกม
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione quam voluptatum perferendis, dignissimos suscipit nihil hic eaque? Ex maxime nulla dicta excepturi reprehenderit neque laboriosam provident natus commodi temporibus? Harum.
+                          lo
                         </p>
                       </div>
                     </div>
