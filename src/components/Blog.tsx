@@ -41,7 +41,9 @@ export default function Blog() {
                     })}
                   </time>
 
-                  <a className={`relative z-10 rounded-full ${convertStatus(projects.status)}  px-2 sm:px-3 py-1.5 font-medium text-gray-900`}>
+                  <a
+                    className={`relative z-10 rounded-full ${convertStatus(projects.status)}  px-2 sm:px-3 py-1.5 font-medium text-gray-900`}
+                  >
                     {projects.status}
                   </a>
                 </div>
