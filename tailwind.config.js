@@ -21,7 +21,7 @@ export default {
       },
       height: {
         'max-height': '90vh',
-      }
+      },
     },
   },
   plugins: [],

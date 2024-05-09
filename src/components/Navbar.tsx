@@ -1,5 +1,14 @@
 import { Fragment, useState } from 'react';
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react';
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  Transition,
+} from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import SearchBox from './Searchbox';
@@ -8,21 +17,16 @@ const navigation = [
   { name: 'Explore', href: '/explore', current: false },
   { name: 'About us', href: '/team', current: false },
 ];
-const links = [
-  {name: 'My Profile', href: '/profile', current: false},
-]
+const links = [{ name: 'My Profile', href: '/profile', current: false }];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
 export default function Navbar() {
-const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(false);
   return (
-    <Disclosure 
-      as="nav" 
-      className="font-noto-sans top-0 sticky w-full shadow-sm bg-white/40 z-50"
-      >
+    <Disclosure as="nav" className="font-noto-sans top-0 sticky w-full shadow-sm bg-white/40 z-50">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -135,28 +139,28 @@ const [login, setLogin] = useState(false);
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <MenuItems className="absolute right-0 z-10 mt-2 w-32 origin-top-right rounded-md bg-white shadow-lg">
-                    {links.map((item, index) => (
-                          <MenuItem key={index}>
-                            <Link
-                              to={item.href}
-                              className={classNames(
-                                'text-gray-700 hover:bg-pink-100 rounded-md px-3 py-2 text-sm flex items-center justify-center',
-                              )}
-                              aria-current={item.current ? 'page' : undefined}
-                            >
-                              {item.name}
-                            </Link>
-                          </MenuItem>
-                        ))}
-                        <MenuItem>
+                      {links.map((item, index) => (
+                        <MenuItem key={index}>
                           <Link
-                            to = '/Home'
-                            onClick={() => setLogin(false)}
-                            className="text-gray-700 hover:bg-pink-100 rounded-md px-3 py-2 text-sm flex items-center justify-center"
+                            to={item.href}
+                            className={classNames(
+                              'text-gray-700 hover:bg-pink-100 rounded-md px-3 py-2 text-sm flex items-center justify-center',
+                            )}
+                            aria-current={item.current ? 'page' : undefined}
                           >
-                            Sign out
+                            {item.name}
                           </Link>
                         </MenuItem>
+                      ))}
+                      <MenuItem>
+                        <Link
+                          to="/Home"
+                          onClick={() => setLogin(false)}
+                          className="text-gray-700 hover:bg-pink-100 rounded-md px-3 py-2 text-sm flex items-center justify-center"
+                        >
+                          Sign out
+                        </Link>
+                      </MenuItem>
                     </MenuItems>
                   </Transition>
                 </Menu>
