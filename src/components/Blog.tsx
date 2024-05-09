@@ -1,6 +1,16 @@
 import { useBlog } from '../utils/blogs';
 
 export default function Blog() {
+  function convertStatus(status: string) {
+    if (status === 'Pending') {
+      return 'bg-status-pending';
+    } else if (status === 'Published') {
+      return 'bg-status-inactive';
+    } else if (status === 'In Progress') {
+      return 'bg-status-active';
+    } else return '';
+  }
+
   const { blog, isLoading, isError } = useBlog();
   if (isLoading) return <h1>Loading</h1>;
   if (isError) return <h1>Error</h1>;
@@ -31,7 +41,7 @@ export default function Blog() {
                     })}
                   </time>
 
-                  <a className="relative z-10 rounded-full bg-status-active px-2 sm:px-3 py-1.5 font-medium text-gray-900">
+                  <a className={`relative z-10 rounded-full ${convertStatus(projects.status)}  px-2 sm:px-3 py-1.5 font-medium text-gray-900`}>
                     {projects.status}
                   </a>
                 </div>

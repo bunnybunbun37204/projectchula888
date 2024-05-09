@@ -13,7 +13,7 @@ export default {
       colors: {
         'status-active': '#B0FC38',
         'status-pending': '#FFC569',
-        'status-inactive': 'D0312D',
+        'status-inactive': '#D0312D',
         'second-gradient': '#F0EAF4',
         'third-gradient': '#EED9F1',
         'fourth-gradient': '#AB81F7',
