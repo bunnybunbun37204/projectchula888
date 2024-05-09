@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import SearchBox from './Searchbox';
@@ -8,22 +8,28 @@ const navigation = [
   { name: 'Explore', href: '/explore', current: false },
   { name: 'About us', href: '/team', current: false },
 ];
+const links = [
+  {name: 'My Profile', href: '/profile', current: false},
+]
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
 export default function Navbar() {
-  const [login, setLogin] = useState(false);
+const [login, setLogin] = useState(false);
   return (
-    <Disclosure as="nav" className="bg-white font-noto-sans fixed top-0 w-full shadow-md z-50">
+    <Disclosure 
+      as="nav" 
+      className="font-noto-sans top-0 sticky w-full shadow-sm bg-white/40 z-50"
+      >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
+            <div className="relative flex h-24 items-center justify-between">
               {/* mobile menu */}
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                <Disclosure.Button
+                <DisclosureButton
                   className="relative inline-flex items-center justify-center rounded-md p-2
                  text-gray-900 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 >
@@ -34,19 +40,19 @@ export default function Navbar() {
                   ) : (
                     <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                   )}
-                </Disclosure.Button>
+                </DisclosureButton>
               </div>
 
               {/* logo */}
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <Link to="/">
+                  <Link to="/Home">
                     <img className="h-8 w-auto" src="/icons/cHips.svg" alt="Chula 888" />
                   </Link>
                 </div>
                 <div className="flex flex-shrink-0 items-center">
-                  <Link to="/">
-                    <Disclosure.Button className="text-gray-900 pl-4 text-xl font-bold">Chula888</Disclosure.Button>
+                  <Link to="/Home">
+                    <DisclosureButton className="text-gray-900 pl-2 text-2xl font-semibold">Chula888</DisclosureButton>
                   </Link>
                 </div>
 
@@ -58,7 +64,7 @@ export default function Navbar() {
                         to={item.href}
                         key={index}
                         className={classNames(
-                          'bg-white text-gray-900 hover:bg-neutral-100 rounded-md px-3 py-2 text-lg font-medium',
+                          'text-gray-900 hover:bg-pink-100 rounded-md px-3 py-2 text-lg font-medium',
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
@@ -74,24 +80,24 @@ export default function Navbar() {
 
               {/* Login */}
               <div className="absolute inset-y-0 right-0 flex flex-row flex-2 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <Disclosure.Button
-                  className={'bg-white font-medium hover:bg-neutral-100 rounded-md px-3 py-2 text-sm max-sm:hidden'}
+                <DisclosureButton
+                  className={'bg-white font-medium hover:bg-pink-100 rounded-md px-3 py-2 text-sm max-sm:hidden'}
                 >
                   {login ? (
                     <p className="block" aria-hidden="true">
-                      User
+                      Username
                     </p>
                   ) : (
                     <a className="block" aria-hidden="true" onClick={() => setLogin(true)}>
                       Login
                     </a>
                   )}
-                </Disclosure.Button>
+                </DisclosureButton>
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
-                    <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm " disabled={!login}>
+                    <MenuButton className="relative flex rounded-full bg-gray-800 text-sm " disabled={!login}>
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
                       {login ? (
@@ -117,7 +123,7 @@ export default function Navbar() {
                           />
                         </svg>
                       )}
-                    </Menu.Button>
+                    </MenuButton>
                   </div>
                   <Transition
                     as={Fragment}
@@ -128,28 +134,30 @@ export default function Navbar() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Your Profile
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                    <MenuItems className="absolute right-0 z-10 mt-2 w-32 origin-top-right rounded-md bg-white shadow-lg">
+                    {links.map((item, index) => (
+                          <MenuItem key={index}>
+                            <Link
+                              to={item.href}
+                              className={classNames(
+                                'text-gray-700 hover:bg-pink-100 rounded-md px-3 py-2 text-sm flex items-center justify-center',
+                              )}
+                              aria-current={item.current ? 'page' : undefined}
+                            >
+                              {item.name}
+                            </Link>
+                          </MenuItem>
+                        ))}
+                        <MenuItem>
+                          <Link
+                            to = '/Home'
+                            onClick={() => setLogin(false)}
+                            className="text-gray-700 hover:bg-pink-100 rounded-md px-3 py-2 text-sm flex items-center justify-center"
                           >
                             Sign out
-                          </a>
-                        )}
-                      </Menu.Item>
-                    </Menu.Items>
+                          </Link>
+                        </MenuItem>
+                    </MenuItems>
                   </Transition>
                 </Menu>
               </div>
@@ -157,10 +165,10 @@ export default function Navbar() {
           </div>
 
           {/* mobile menu dropdown */}
-          <Disclosure.Panel className="sm:hidden">
+          <DisclosurePanel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item, index) => (
-                <Disclosure.Button
+                <DisclosureButton
                   as="a"
                   key={index}
                   href={item.href}
@@ -171,10 +179,10 @@ export default function Navbar() {
                   aria-current={item.current ? 'page' : undefined}
                 >
                   {item.name}
-                </Disclosure.Button>
+                </DisclosureButton>
               ))}
             </div>
-          </Disclosure.Panel>
+          </DisclosurePanel>
         </>
       )}
     </Disclosure>

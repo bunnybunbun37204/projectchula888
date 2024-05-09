@@ -19,6 +19,9 @@ export default {
         'fourth-gradient': '#AB81F7',
         'last-gradient': '#1D2B64',
       },
+      height: {
+        'max-height': '90vh',
+      }
     },
   },
   plugins: [],

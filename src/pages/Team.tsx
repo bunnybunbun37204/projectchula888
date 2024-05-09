@@ -34,8 +34,8 @@ const people = [
 
 export default function Team() {
   return (
-    <div className="flex min-h-screen py-24 sm:py-32">
-      <div className="m-auto grid max-w-7xl px-6 lg:px-8 xl:grid-cols-3">
+    <div className="flex py-24 h-max-height sm:py-0">
+      <div className="m-auto grid max-w-7xl px-6 lg:px-8 xl:grid-cols-3 justify-items-start">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl font-noto-sans gap-1">
             Meet our
@@ -48,7 +48,7 @@ export default function Team() {
             <strong>&nbsp;คอมชาย</strong> Chula
           </p>
         </div>
-        <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2 ml-14">
+        <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-12 xl:col-span-2 ml-14">
           {people.map((person) => (
             <li key={person.name} className="hover:cursor-pointer">
               <a href={person.ig}>
