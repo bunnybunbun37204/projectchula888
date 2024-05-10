@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import {
   Disclosure,
   DisclosureButton,
@@ -11,6 +11,7 @@ import {
 } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 const navigation = [
   { name: 'Explore', href: '/explore', current: false },
@@ -24,6 +25,14 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
   const [login, setLogin] = useState(false);
+  const [getCookies] = useCookies(['student_id']);
+
+  useEffect(() => {
+    if (getCookies.student_id) {
+      setLogin(true);
+    }
+  }, [getCookies]);
+
   return (
     <Disclosure as="nav" className="font-noto-sans top-0 sticky w-full shadow-sm bg-white/40 z-50">
       {({ open }) => (

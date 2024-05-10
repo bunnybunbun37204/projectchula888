@@ -15,13 +15,13 @@ export default function Explore() {
           <div className="border-t-2 border-gray-200 mt-10 pt-10">
             <div className="container mx-auto p-4">
               <div className="flex flex-row justify-end">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="border border-gray-300 rounded-md p-2"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="border border-gray-300 rounded-md p-2"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
               </div>
             </div>
             <Blog searchQuery={searchQuery} />

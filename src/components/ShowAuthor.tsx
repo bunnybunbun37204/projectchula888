@@ -1,13 +1,13 @@
-import { useBlogId } from "../utils/blogs";
+import { useBlogId } from '../utils/blogs';
 
- interface ShowAuthorProp {
-    id : number
- }
-  export default function ShowAuthor({id} : ShowAuthorProp) {
-    const { blog, isLoading, isError } = useBlogId(id);
-    if (isLoading) return <h1>Loading</h1>;
-    if (isError) return <h1>Error</h1>;
-    if (blog !== undefined)
+interface ShowAuthorProp {
+  id: number;
+}
+export default function ShowAuthor({ id }: ShowAuthorProp) {
+  const { blog, isLoading, isError } = useBlogId(id);
+  if (isLoading) return <h1>Loading</h1>;
+  if (isError) return <h1>Error</h1>;
+  if (blog !== undefined)
     return (
       <div className="grid gap-x-8 gap-y-8 px-8 xl:grid-cols-1">
         <ul role="list" className="grid gap-y-8 sm:grid-cols-1 sm:gap-y-8 xl:col-span-2">
@@ -44,4 +44,4 @@ import { useBlogId } from "../utils/blogs";
         </ul>
       </div>
     );
-  }
+}

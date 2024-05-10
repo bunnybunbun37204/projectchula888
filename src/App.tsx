@@ -15,7 +15,6 @@ const App = () => {
       <Route path="/explore" element={<Explore />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/blog/:id" element={<BlogPost />} />
-
     </Routes>
   );
 };
