@@ -14,7 +14,7 @@ export default function Explore() {
           </p>
           <div className="border-t-2 border-gray-200 mt-10 pt-10">
             <div className="container mx-auto p-4">
-              <h1 className="text-2xl font-bold mb-4">Multi-Value Filter Example</h1>
+              <div className="flex flex-row justify-end">
               <input
                 type="text"
                 placeholder="Search..."
@@ -22,6 +22,7 @@ export default function Explore() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
+              </div>
             </div>
             <Blog searchQuery={searchQuery} />
           </div>

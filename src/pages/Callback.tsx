@@ -14,7 +14,13 @@ function Callback() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [, setCookie] = useCookies(['student_id', 'student_lname', 'student_fname', 'student_email', 'student_faculty']);
+  const [, setCookie] = useCookies([
+    'student_id',
+    'student_lname',
+    'student_fname',
+    'student_email',
+    'student_faculty',
+  ]);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -32,7 +38,7 @@ function Callback() {
         setUser(userData);
         setLoading(false);
         setCookie('student_id', userData.result.id);
-        window.location.href = '/explore'
+        window.location.href = '/explore';
       })
       .catch(() => {
         setError(true);
