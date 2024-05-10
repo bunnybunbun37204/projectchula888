@@ -1,6 +1,20 @@
 import { UserCircleIcon } from '@heroicons/react/16/solid';
+import { useEffect, useState } from 'react';
+import { useCookies } from 'react-cookie';
 
 export default function Profile() {
+  const [getCookies] = useCookies(['student_id', 'student_fname', 'student_lname', 'student_email', 'student_faculty']);
+
+  const [fname, setFname] = useState('');
+  const [lname, setLname] = useState('');
+  const [email, setEmail] = useState('');
+  const [id, setId] = useState('');
+  useEffect(() => {
+    setFname(getCookies.student_fname);
+    setEmail(getCookies.student_email);
+    setId(getCookies.student_id);
+    setLname(getCookies.student_lname);
+  }, [getCookies]);
   return (
     <div className="min-h-screen min-w-max p-8 font-noto-sans">
       <div className="sm:mt-12 mb-0 py-16 mx-auto max-w-2xl sm:max-w-7xl bg-white/50 shadow-xl">
@@ -26,11 +40,11 @@ export default function Profile() {
             </div>
           </div>
           <div className="flex flex-1 flex-col justify-center items-center sm:items-start mt-8 sm:mt-0 gap-y-1 sm:gap-y-4 sm:px-36">
-            <h2 className="text-xl font-bold tracking-tight text-gray-900 sm:text-4xl">FIRSTNAME LASTNAME</h2>
-            <p className="text-lg font-semibold tracking-tight text-gray-900 sm:text-3xl">Student ID</p>
-            <p className="text-sm font-semibold tracking-tight text-gray-900 sm:text-2xl">
-              Email: 6534451023@student.chula.ac.th
-            </p>
+            <h2 className="text-xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              {fname} {lname}
+            </h2>
+            <p className="text-lg font-semibold tracking-tight text-gray-900 sm:text-3xl">Student ID : {id}</p>
+            <p className="text-sm font-semibold tracking-tight text-gray-900 sm:text-2xl">Email: {email}</p>
           </div>
         </div>
         <div className="relative items-center justify-center mx-40 mt-10"></div>

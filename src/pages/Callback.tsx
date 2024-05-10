@@ -39,6 +39,8 @@ function Callback() {
         setLoading(false);
         setCookie('student_id', userData.result.id);
         setCookie('student_fname', userData.result.fname);
+        setCookie('student_email', userData.result.email);
+        setCookie('student_lname', userData.result.student_lname);
         window.location.href = '/explore';
       })
       .catch(() => {
