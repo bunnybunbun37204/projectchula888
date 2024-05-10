@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const URL = 'https://projectchula888.pages.dev'; // Assuming this is your base URL
 
-const fetchUser = async (ticket: string ) => {
+const fetchUser = async (ticket: string) => {
   const response = await axios.get(`${URL}/register/${ticket}`);
   return response.data;
 };
@@ -17,7 +17,7 @@ function Callback() {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const _ticket = urlParams.get('ticket');
-    console.log("Ticket is "+_ticket);
+    console.log('Ticket is ' + _ticket);
     if (!_ticket) {
       console.error('Ticket is missing');
       return;
@@ -25,7 +25,7 @@ function Callback() {
 
     setTicket(_ticket);
 
-    fetchUser(_ticket)
+    fetchUser(ticket)
       .then((userData) => {
         setUser(userData);
         setLoading(false);
