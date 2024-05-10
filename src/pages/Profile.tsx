@@ -22,7 +22,6 @@ export default function Profile() {
           <div className="flex flex-col items-center py-4 gap-y-1">
             <UserCircleIcon width={280} height={280} />
             <div className="flex flex-row gap-x-1 justify-center items-center">
-              <p className="text-xs font-medium sm:text-sm ">Edit profile</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
