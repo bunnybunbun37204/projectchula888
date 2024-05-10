@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 
 const URL = 'https://projectchula888.pages.dev'; // Assuming this is your base URL
 
 const fetchUser = async (ticket: string) => {
-  const response = await axios.get(`${URL}/register/${ticket}`);
-  return response.data;
+  const response = await fetch(`${URL}/register/${ticket}`);
+  return response.json();
 };
 
 function Callback() {
