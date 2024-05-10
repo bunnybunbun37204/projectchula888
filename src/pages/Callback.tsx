@@ -25,7 +25,7 @@ function Callback() {
 
     setTicket(_ticket);
 
-    fetchUser(ticket)
+    fetchUser(_ticket)
       .then((userData) => {
         setUser(userData);
         setLoading(false);
