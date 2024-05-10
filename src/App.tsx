@@ -3,7 +3,6 @@ import Home from './pages/Home';
 import Team from './pages/Team';
 import Project from './pages/Project';
 
-
 const App = () => {
   return (
     <Routes>
