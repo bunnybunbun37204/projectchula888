@@ -29,6 +29,7 @@ function Callback() {
       .then((userData) => {
         setUser(userData);
         setLoading(false);
+        console.log(JSON.stringify(userData));
       })
       .catch(() => {
         setError(true);
