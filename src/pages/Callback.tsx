@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const URL = 'https://projectchula888-api.bunyawatapp37204.workers.dev/';
+const URL = 'https://projectchula888-api.bunyawatapp37204.workers.dev';
 
 const fetchUser = async (ticket: string) => {
   const response = await axios.get(`${URL}/auth/callback/${ticket}`);
