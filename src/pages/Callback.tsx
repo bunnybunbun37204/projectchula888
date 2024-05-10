@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const URL = 'https://projectchula888-api.bunyawatapp37204.workers.dev/auth/register/';
+const URL = 'https://projectchula888-api.bunyawatapp37204.workers.dev/';
 
 const fetchUser = async (ticket: string) => {
   const response = await axios.get(`${URL}/auth/callback/${ticket}`);
@@ -16,7 +16,7 @@ function Callback() {
 
   useEffect(() => {
     // Get the ticket from the URL query parameters
-    const _ticket = new URLSearchParams(window.location.search).get('ticket') || ""
+    const _ticket = new URLSearchParams(window.location.search).get('ticket') || '';
     if (!_ticket) {
       console.error('Ticket is missing');
       return;

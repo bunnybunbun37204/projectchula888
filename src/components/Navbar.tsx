@@ -92,7 +92,12 @@ export default function Navbar() {
                       Username
                     </p>
                   ) : (
-                    <a href='https://account.it.chula.ac.th/html/login.html?serviceName=PUSSADU-SUCU&service=https://projectchula888.pages.dev/callback' className="block" aria-hidden="true" onClick={() => setLogin(true)}>
+                    <a
+                      href="https://account.it.chula.ac.th/html/login.html?serviceName=PUSSADU-SUCU&service=https://projectchula888.pages.dev/callback"
+                      className="block"
+                      aria-hidden="true"
+                      onClick={() => setLogin(true)}
+                    >
                       Login
                     </a>
                   )}

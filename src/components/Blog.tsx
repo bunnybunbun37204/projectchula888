@@ -19,9 +19,7 @@ export default function Blog({ searchQuery }: BlogProps) {
   if (isLoading) return <h1>Loading</h1>;
   if (isError) return <h1>Error</h1>;
   if (blog) {
-    const filteredBlogs = blog.filter((project) =>
-      project.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    const filteredBlogs = blog.filter((project) => project.title.toLowerCase().includes(searchQuery.toLowerCase()));
     return (
       <div className="py-24 sm:py-32 ">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -81,5 +79,4 @@ export default function Blog({ searchQuery }: BlogProps) {
       </div>
     );
   }
-
 }
