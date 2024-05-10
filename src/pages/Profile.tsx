@@ -1,5 +1,4 @@
 import { UserCircleIcon } from '@heroicons/react/16/solid';
-import Blog from '../components/Blog';
 
 export default function Profile() {
   return (
@@ -35,7 +34,6 @@ export default function Profile() {
           </div>
         </div>
         <div className="relative items-center justify-center mx-40 mt-10">
-          <Blog />
         </div>
       </div>
     </div>
