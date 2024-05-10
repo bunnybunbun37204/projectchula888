@@ -1,22 +1,23 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const URL = 'https://projectchula888-api.bunyawatapp37204.workers.dev';
+const URL = 'https://projectchula888.pages.dev'; // Assuming this is your base URL
 
-const fetchUser = async (ticket: string) => {
-  const response = await axios.get(`${URL}/auth/callback/${ticket}`);
+const fetchUser = async (ticket: string ) => {
+  const response = await axios.get(`${URL}/register/${ticket}`);
   return response.data;
 };
 
 function Callback() {
-  const [ticket, setTicket] = useState<string>('');
-  const [user, setUser] = useState<unknown | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<boolean>(false);
+  const [ticket, setTicket] = useState('');
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    // Get the ticket from the URL query parameters
-    const _ticket = new URLSearchParams(window.location.search).get('ticket') || '';
+    const urlParams = new URLSearchParams(window.location.search);
+    const _ticket = urlParams.get('ticket');
+    console.log("Ticket is "+_ticket);
     if (!_ticket) {
       console.error('Ticket is missing');
       return;
@@ -24,7 +25,7 @@ function Callback() {
 
     setTicket(_ticket);
 
-    fetchUser(ticket)
+    fetchUser(_ticket)
       .then((userData) => {
         setUser(userData);
         setLoading(false);
