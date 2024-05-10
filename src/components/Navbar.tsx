@@ -25,11 +25,13 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
   const [login, setLogin] = useState(false);
-  const [getCookies] = useCookies(['student_id']);
+  const [fname, setFname] = useState('fname');
+  const [getCookies] = useCookies(['student_id', 'student_fname']);
 
   useEffect(() => {
     if (getCookies.student_id) {
       setLogin(true);
+      setFname(getCookies.student_fname);
     }
   }, [getCookies]);
 
@@ -94,7 +96,7 @@ export default function Navbar() {
                 >
                   {login ? (
                     <p className="block" aria-hidden="true">
-                      Username
+                      {fname}
                     </p>
                   ) : (
                     <a

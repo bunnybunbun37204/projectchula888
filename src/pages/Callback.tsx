@@ -38,6 +38,7 @@ function Callback() {
         setUser(userData);
         setLoading(false);
         setCookie('student_id', userData.result.id);
+        setCookie('student_fname', userData.result.fname);
         window.location.href = '/explore';
       })
       .catch(() => {
