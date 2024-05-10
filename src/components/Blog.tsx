@@ -1,10 +1,93 @@
-import { useBlog } from '../utils/blogs';
+
+export const blog = 
+  [
+    {
+        "project_id": 24,
+        "title": "New Project 1234",
+        "advisors": [
+            {
+                "id": 9,
+                "advisor_id": "1234567893",
+                "project_id": 24,
+                "name": "ad4",
+                "department": "mathcom",
+                "email": "ad4@mail.com"
+            }
+        ],
+        "description": "Description of the new project",
+        "endDate": "2024-05-30T00:00:00.000Z",
+        "startDate": "2024-04-30T00:00:00.000Z",
+        "status": "In Progress",
+        "students": [
+            {
+                "id": 13,
+                "student_id": "6534435224",
+                "project_id": 24,
+                "email": "NmN4@gmail.com",
+                "name": "Nm4N",
+                "major": "SCI"
+            },
+            {
+                "id": 14,
+                "student_id": "6534435227",
+                "project_id": 24,
+                "email": "NmN7@gmail.com",
+                "name": "Nm7N",
+                "major": "SCI"
+            }
+        ]
+    },
+    {
+        "project_id": 25,
+        "title": "New Project 2344ff55",
+        "advisors": [
+            {
+                "id": 10,
+                "advisor_id": "1234567893",
+                "project_id": 25,
+                "name": "ad4",
+                "department": "mathcom",
+                "email": "ad4@mail.com"
+            }
+        ],
+        "description": "Description of the new project",
+        "endDate": "2024-05-30T00:00:00.000Z",
+        "startDate": "2024-04-30T00:00:00.000Z",
+        "status": "In Progress",
+        "students": [
+            {
+                "id": 15,
+                "student_id": "6534435224",
+                "project_id": 25,
+                "email": "NmN4@gmail.com",
+                "name": "Nm4N",
+                "major": "SCI"
+            },
+            {
+                "id": 16,
+                "student_id": "6534435227",
+                "project_id": 25,
+                "email": "NmN7@gmail.com",
+                "name": "Nm7N",
+                "major": "SCI"
+            },
+            {
+                "id": 17,
+                "student_id": "6534435223",
+                "project_id": 25,
+                "email": "6534435223@student.chula.ac.th",
+                "name": "บัญญวัฒ นวลนาค",
+                "major": "student"
+            }
+        ]
+    },
+];
 
 export default function Blog() {
-  const { blog, isLoading, isError } = useBlog();
-  if (isLoading) return <h1>Loading</h1>;
-  if (isError) return <h1>Error</h1>;
-  if (blog)
+  // const { blog, isLoading, isError } = useBlog();
+  // if (isLoading) return <h1>Loading</h1>;
+  // if (isError) return <h1>Error</h1>;
+  // if (blog)
     return (
       <div className="py-24 sm:py-32 ">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

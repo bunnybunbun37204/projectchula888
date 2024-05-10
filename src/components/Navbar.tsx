@@ -11,7 +11,6 @@ import {
 } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
-import SearchBox from './Searchbox';
 
 const navigation = [
   { name: 'Explore', href: '/explore', current: false },
@@ -76,9 +75,6 @@ export default function Navbar() {
                       </Link>
                     ))}
                   </div>
-                </div>
-                <div className="flex flex-1 -mt-1.5 max-lg:hidden">
-                  <SearchBox />
                 </div>
               </div>
 

@@ -1,69 +1,54 @@
-import { Combobox, ComboboxInput, ComboboxOption, ComboboxOptions } from '@headlessui/react';
-import { CheckIcon } from '@heroicons/react/24/outline';
-import { useState } from 'react';
-
-interface Person {
-  id: number;
-  name: string;
-}
-
-const people: Person[] = [
-  { id: 1, name: 'Tom Cook' },
-  { id: 2, name: 'Wade Cooper' },
-  { id: 3, name: 'Tanya Fox' },
-  { id: 4, name: 'Arlene Mccoy' },
-  { id: 5, name: 'Devon Webb' },
-];
+import { Fragment, useState } from 'react';
+import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { blog } from './Blog'; // Assuming blog is an array of projects
 
 export default function FilterBox() {
-  const [query, setQuery] = useState<string>('');
-  const [selected, setSelected] = useState<Person | null>(people[0]); // Default selection (e.g., first person)
+  const [selectedProject, setSelectedProject] = useState<string>(""); // State to track selected project title
 
-  const filteredPeople = people.filter((person) => person.name.toLowerCase().includes(query.toLowerCase()));
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(event.target.value);
-  };
-
-  const handleSelectionChange = (selectedOption: Person | null) => {
-    setSelected(selectedOption);
-    setQuery(''); // Clear query after selecting an option
+  const handleProjectSelect = (title: string) => {
+    setSelectedProject(title); // Update selected project title when clicked
   };
 
   return (
-    <div>
-      <Combobox value={selected} onChange={handleSelectionChange}>
-        <div className="relative mt-2 rounded-md shadow-sm">
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-              <path d="M17 ... " />
-            </svg>
+    <Menu as="div" className="relative inline-block text-left">
+      <div className=" mt-0">
+        <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm">
+          {selectedProject || 'Project Title'} {/* Display selected title or default text */}
+          <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
+        </MenuButton>
+      </div>
+
+
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95"
+      >
+        <MenuItems className="absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <div className="py-1">
+            {blog.map((project) => (
+              <MenuItem key={project.title}>
+                <button
+                  className={`flex w-full justify-start items-center p-2 focus:outline-none ${
+                    selectedProject === project.title ? 'bg-gray-200' : ''
+                  }`}
+                  onClick={() => handleProjectSelect(project.title)}
+                >
+                  {project.title}
+                </button>
+              </MenuItem>
+            ))}
           </div>
+        </MenuItems>
+      </Transition>
+      <div className=''>
 
-          <ComboboxInput
-            type="text"
-            name="category"
-            id="name"
-            className="block rounded-md py-1.5 pl-7 pr-20 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
-            onChange={handleInputChange}
-            value={query}
-            placeholder="Input Here"
-          />
-        </div>
-
-        <ComboboxOptions className="w-[var(--input-width)] rounded-xl border border-white/5 bg-white p-1 [--anchor-gap:var(--spacing-1)] empty:hidden">
-          {filteredPeople.map((person) => (
-            <ComboboxOption
-              key={person.id}
-              value={person}
-              className="group flex bg-white cursor-default items-center gap-2 rounded-lg py-1.5 px-3 select-none data-[focus]:bg-white/10"
-            >
-              {selected === person && <CheckIcon className="w-4 h-4 text-primary" />}
-              <div className="text-sm text-gray-900">{person.name}</div>
-            </ComboboxOption>
-          ))}
-        </ComboboxOptions>
-      </Combobox>
-    </div>
+      </div>
+    </Menu>
   );
 }
