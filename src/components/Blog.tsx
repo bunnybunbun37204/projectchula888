@@ -1,6 +1,10 @@
 import { useBlog } from '../utils/blogs';
 
-export default function Blog() {
+interface BlogProps {
+  searchQuery: string;
+}
+
+export default function Blog({ searchQuery }: BlogProps) {
   function convertStatus(status: string) {
     if (status === 'Pending') {
       return 'bg-status-pending';
@@ -14,7 +18,10 @@ export default function Blog() {
   const { blog, isLoading, isError } = useBlog();
   if (isLoading) return <h1>Loading</h1>;
   if (isError) return <h1>Error</h1>;
-  if (blog)
+  if (blog) {
+    const filteredBlogs = blog.filter((project) =>
+      project.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
     return (
       <div className="py-24 sm:py-32 ">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -25,7 +32,7 @@ export default function Blog() {
             </p>
           </div>
           <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {blog.map((projects) => (
+            {filteredBlogs.map((projects) => (
               <article
                 key={projects.project_id}
                 className="flex max-w-xl flex-col justify-between transition-transform transform hover:scale-105 shadow-sm
@@ -73,4 +80,6 @@ export default function Blog() {
         </div>
       </div>
     );
+  }
+
 }

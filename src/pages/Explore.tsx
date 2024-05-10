@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import Blog from '../components/Blog';
 
 export default function Explore() {
+  const [searchQuery, setSearchQuery] = useState('');
+
   return (
     <div className="min-h-screen p-8 font-noto-sans">
       <div className="mt-12 mb-0 py-20 mx-auto max-w-7xl bg-white/50 shadow-xl">
@@ -12,8 +15,15 @@ export default function Explore() {
           <div className="border-t-2 border-gray-200 mt-10 pt-10">
             <div className="container mx-auto p-4">
               <h1 className="text-2xl font-bold mb-4">Multi-Value Filter Example</h1>
+              <input
+                type="text"
+                placeholder="Search..."
+                className="border border-gray-300 rounded-md p-2"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
             </div>
-            <Blog />
+            <Blog searchQuery={searchQuery} />
           </div>
         </div>
       </div>
