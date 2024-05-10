@@ -4,6 +4,7 @@ const URL = 'https://projectchula888.pages.dev'; // Assuming this is your base U
 
 const fetchUser = async (ticket: string) => {
   const response = await fetch(`${URL}/register/${ticket}`);
+  console.log('Data', response.json());
   return response.json();
 };
 
