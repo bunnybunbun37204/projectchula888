@@ -33,8 +33,7 @@ export default function Profile() {
             </p>
           </div>
         </div>
-        <div className="relative items-center justify-center mx-40 mt-10">
-        </div>
+        <div className="relative items-center justify-center mx-40 mt-10"></div>
       </div>
     </div>
   );
