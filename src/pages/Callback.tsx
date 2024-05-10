@@ -9,7 +9,7 @@ const fetchUser = async (ticket: string) => {
 };
 
 function Callback() {
-  const [ticket, setTicket] = useState('');
+  const [, setTicket] = useState('');
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
