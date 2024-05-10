@@ -40,7 +40,7 @@ function Callback() {
         setCookie('student_id', userData.result.id);
         setCookie('student_fname', userData.result.fname);
         setCookie('student_email', userData.result.email);
-        setCookie('student_lname', userData.result.student_lname);
+        setCookie('student_lname', userData.result.lname);
         window.location.href = '/explore';
       })
       .catch(() => {
