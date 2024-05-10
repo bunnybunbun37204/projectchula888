@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 
-const URL = 'https://projectchula888.pages.dev'; // Assuming this is your base URL
+// const URL = 'https://projectchula888.pages.dev'; // Assuming this is your base URL
 
 const fetchUser = async (ticket: string) => {
-    console.log(ticket)
-  const response = await fetch("https://projectchula888-api.bunyawatapp37204.workers.dev/auth/register/60a6300964bd02e6d673e4f585c6608dbfc63d22e4e1c9a4b3f02a78d06b3a04");
+  console.log(ticket);
+  const response = await fetch(
+    'https://projectchula888-api.bunyawatapp37204.workers.dev/auth/register/60a6300964bd02e6d673e4f585c6608dbfc63d22e4e1c9a4b3f02a78d06b3a04',
+  );
   return response.json();
 };
 
